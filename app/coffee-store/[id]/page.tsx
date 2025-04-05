@@ -1,12 +1,13 @@
 import React from "react";
 import Link from "next/link";
+import { NextPage } from "next";
 
-type Props = {
+type PageProps = {
   params: { id: string };
-  searchParams?: { [key: string]: string | string[] | undefined };
+  searchParams: { [key: string]: string | string[] | undefined };
 };
 
-export default function Page({ params }: Props) {
+const Page: NextPage<PageProps> = ({ params }) => {
   return (
     <div className="h-full pb-80">
       {params.id}
@@ -17,4 +18,6 @@ export default function Page({ params }: Props) {
       </div>
     </div>
   );
-}
+};
+
+export default Page;
