@@ -1,12 +1,11 @@
 import React from "react";
 import Link from "next/link";
 
-export default function Page({
-  params,
-}: {
+type Props = {
   params: { id: string };
-  searchParams: { [key: string]: string | string[] | undefined };
-}) {
+}
+
+export default function Page({ params }: Props) {
   return (
     <div className="h-full pb-80">
       {params.id}
